@@ -8,63 +8,44 @@ Test set Accuracy: 90.4 %
 
 ## Configuration
 
-config = {
-    'base_root': "C:/pythonScript/CXR/cxr/xray_jpg",
-    'csv_name': "chest_dongdong.csv",
-    'debug': False,
-    'resume': "",
-    'classes': 7,
-    'img_size': 512,
-    'normalize': True,
-    'classes_name': ['主動脈硬化(鈣化)', '動脈彎曲', '肺野異常', '肺紋增加', '脊椎病變', '心臟肥大', '肺尖肋膜增厚'],
-    'device': "cuda",
-    'epochs': 20,
-    'n_splits': 5,
-    "batch_size": 4,
-    'optimizer': "adamw",
-    'model_name': "tf_efficientnet_b2_ns",
-    'lr': 1e-4,
-    'weight_decay': 1e-6,
-    'amp': False,
-    'lr_scheduler': "poly",
-    'T_max': 10,
-    'patience': 2,
-    'factor': 0.5,
-    'random_state': 42,
-    'threshold': 0.5,
-    'tta': False,
-    'monitor': "f1",
-    'loss_func': "FocalLoss",
-    'alpha': 0.5,
-    'beta': 0.5,
-    'gamma': 2,
-    'k': 3,
-    'average': None,
-    'project': "CXR-Binary-Classification",
-    'entity': "DDCVLAB",
-    'name': "Testing",
-    "sweep": False,
-    "count": 5,
-    "rotate_degree": 5,
-}
+- 'base_root': "C:/pythonScript/CXR/cxr/xray_jpg",
+- 'csv_name': "chest_dongdong.csv",
+- 'debug': False,
+- 'resume': "",
+- 'classes': 7,
+- 'img_size': 512,
+- 'normalize': True,
+- 'classes_name': ['主動脈硬化(鈣化)', '動脈彎曲', '肺野異常', '肺紋增加', '脊椎病變', '心臟肥大', '肺尖肋膜增厚'],
+- 'device': "cuda",
+- 'epochs': 20,
+- 'n_splits': 5,
+- "batch_size": 4,
+- 'optimizer': "adamw",
+- 'model_name': "tf_efficientnet_b2_ns",
+- 'lr': 1e-4,
+- 'weight_decay': 1e-6,
+- 'amp': False,
+- 'lr_scheduler': "poly",
+- 'T_max': 10,
+- 'patience': 2,
+- 'factor': 0.5,
+- 'random_state': 42,
+- 'threshold': 0.5,
+- 'tta': False,
+- 'monitor': "f1",
+- 'loss_func': "FocalLoss",
+- 'alpha': 0.5,
+- 'beta': 0.5,
+- 'gamma': 2,
+- 'k': 3,
+- 'average': None,
+- 'project': "CXR-Binary-Classification",
+- 'entity': "DDCVLAB",
+- 'name': "Testing",
+- "sweep": False,
+- "count": 5,
+- "rotate_degree": 5,- 
 
-
-sweep_config = {
-    "program": "main.py",
-    "method": "grid",
-    "metrics": {'goal': 'minimize', 'name': 'val_loss'},
-    "parameters": {
-        "lr": {
-            "values": [1e-3, 5e-4, 1e-4, 5e-5]
-        },
-        "weight_decay": {
-            "values": [1e-6, 1e-7, 1e-8]
-        },
-        "threshold": {
-            "values": [0.4, 0.5, 0.6]
-        }
-    }
-}
 
 ## Experimental
 
