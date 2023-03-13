@@ -15,3 +15,9 @@ A simple approach has been stored in the folder of cxr-image-classification
 - GPU: 3050 4GM
 - Epoch: 5 + 1 (5 for classifier, 1 for all paramaters)
 - Loss: WeightedBCE
+
+### Report Location
+
+Here is the report generated from WandB platform
+
+https://api.wandb.ai/links/ddcvlab/dqcal3k2
